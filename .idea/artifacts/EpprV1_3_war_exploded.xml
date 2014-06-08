@@ -1,0 +1,25 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="EpprV1.3:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/EpprV1_3_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="EpprV1.3/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="EpprV1.3" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="jstl-1.2" />
+          <element id="library" level="project" name="mysql-connector-java-5.1.18-bin" />
+          <element id="library" level="project" name="aopalliance-1.0" />
+          <element id="library" level="project" name="commons-pool-1.4" />
+          <element id="library" level="project" name="commons-dbcp-1.2.2" />
+          <element id="library" level="project" name="spring-core-4.0.5.RELEASE" />
+          <element id="library" level="project" name="spring-context-4.0.5.RELEASE" />
+          <element id="library" level="project" name="spring-jdbc-4.0.5.RELEASE" />
+          <element id="library" level="project" name="spring-tx-4.0.5.RELEASE" />
+          <element id="library" level="project" name="spring-web-4.0.5.RELEASE" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
