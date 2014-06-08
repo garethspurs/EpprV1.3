@@ -9,9 +9,9 @@ public interface UserDAO {
 
     public void add(User user);
 
-    public void delete(long id);
+    public void delete(int id);
 
-    public User getUser(long id) ;
+    public User getUser(int id) ;
 
     public User getUser(String email) ;
     

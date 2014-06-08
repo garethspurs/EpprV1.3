@@ -22,6 +22,7 @@
     </tags:email>
     <c:out value="${role}"/>
     <c:out value="${email}"/>
+
     <table  class="usersTable_class" cellpadding="5"  align="center" id="listUsers">
         <caption align="center">Users</caption>
         <tr class="usersTableTitle_class ">
@@ -51,7 +52,7 @@
                 <c:if test="${role == 'admin'}">
                     <c:if test="${email != user.email}">
                         <td>
-                            <a href="${pageContext.request.contextPath}/Delete?id=${user.id}">
+                            <a href="${pageContext.request.contextPath}/dispatch/Delete?id=${user.id}">
                                 <img src="${pageContext.request.contextPath}/resources/images/buttondelete.png" class="table_image_class">
                             </a>
                         </td>

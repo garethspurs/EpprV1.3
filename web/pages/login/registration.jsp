@@ -9,12 +9,12 @@
     <script src="${pageContext.request.contextPath}/js/javaScript.js"></script>
 </head>
 <body>
-    <form id="reg_form_id" name="registration_user_form" action="${pageContext.request.contextPath}/dispatch/add/confirm/reg"
+    <form id="reg_form_id" name="registration_user_form" action="${pageContext.request.contextPath}/dispatch/addUser/registration"
           method="post">
         <p align="center">Registration</p>
         <jsp:include page="${pageContext.request.contextPath}/pages/modify.jsp"/>
         <p align="center">
-            <c:set var="str" value="/add/confirm/reg"/>
+            <c:set var="str" value="/dispatch/addUser/registration"/>
             <input type="button" value="Save" class="button_class" onclick="validate('#reg_form_id')">
         </p>
 

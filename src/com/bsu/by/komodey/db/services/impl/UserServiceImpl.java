@@ -46,8 +46,9 @@ public class UserServiceImpl implements UserService {
         return null;
     }
 
+    @Transactional
     @Override
-    public void delete(long id){
+    public void delete(int id){
          daoObj.delete(id);
     }
 
@@ -65,7 +66,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User getUserById(long id){
+    public User getUserById(int id){
         return daoObj.getUser(id);
     }
 

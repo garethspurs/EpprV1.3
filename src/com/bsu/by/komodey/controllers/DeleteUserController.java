@@ -8,10 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.http.HttpServlet;
 
 @Controller
-public class DeleteUserController extends HttpServlet {
+public class DeleteUserController {
 
     @RequestMapping(value = "Delete", method = RequestMethod.GET)
     public String delete(Model model,
@@ -19,12 +18,12 @@ public class DeleteUserController extends HttpServlet {
 
         UserService us =
                 (UserService) UserServiceImpl.ctx.getBean("userServiceImpl");
-        long idL = Long.parseLong(id);
+        int idI = Integer.parseInt(id);
 //        if(req.getRemoteUser().equals(us.getUserById(id).getEmail())){
 //            System.out.println("Fail to delete yourself.");
 //            return;
 //        }
-        us.delete(idL);
+        us.delete(idI);
         model.addAttribute("users_set", us.getValues());
         return "list/list";
     }

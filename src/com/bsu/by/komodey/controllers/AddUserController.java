@@ -16,7 +16,7 @@ public class AddUserController {
             (UserService) UserServiceImpl.ctx.getBean("userServiceImpl");
 
     @RequestMapping(value = "addUser/{rest}", method = RequestMethod.POST)
-      public String addUser(@PathVariable String restPath,
+      public String addUser(@PathVariable("rest") String rest,
                             @RequestParam("email")String email,
                             @RequestParam("password")String password,
                             @RequestParam("name")String name,
@@ -24,14 +24,16 @@ public class AddUserController {
                             @RequestParam("phone")String phone,
                             @RequestParam(value = "checkAdmin", required = false)String checkAdmin,
                             Model model){
-
+        System.out.println("azaza");
         add(email, password, name, surname, phone, checkAdmin);
-        if(restPath.equals("registr")){
+        if(rest.equals("registration")){
+            return "login/login";
+
+        }
+        if(rest.equals("byAdmin")){
             model.addAttribute("users_set", us.getValues());
             return "list/list";
-        }
-        if(restPath.equals("byAdmin")){
-            return "login/login";
+
         }
 
         return null;

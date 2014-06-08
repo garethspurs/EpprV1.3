@@ -7,11 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.stereotype.Service;
 
-import java.beans.Statement;
-import java.util.ArrayList;
-import java.util.Collection;
-
 import javax.sql.DataSource;
+import java.util.Collection;
 
 @Service
 public class UserDAOImpl extends JdbcDaoSupport implements UserDAO {
@@ -51,15 +48,15 @@ public class UserDAOImpl extends JdbcDaoSupport implements UserDAO {
                 user.getName(),
                 user.getSurname(),
                 user.getRole(),
-                (int)user.getId());
+                user.getId());
         getJdbcTemplate().update(UPDATE_ROW_PHONE,
                 user.getPhone(),
-                (int)user.getId());
+                user.getId());
     }
 
     @Override
-    public void delete(long id) {
-        getJdbcTemplate().update(DELETE_ROW, (int)id);
+    public void delete(int id) {
+        getJdbcTemplate().update(DELETE_ROW, id);
     }
 
     public boolean isExist(String email, String password){
@@ -77,10 +74,10 @@ public class UserDAOImpl extends JdbcDaoSupport implements UserDAO {
                 new UserMapper());
     }
     @Override
-    public User getUser(long id){
+    public User getUser(int id){
         return getJdbcTemplate().
                 queryForObject(GET_BY_ID,
-                new Object[]{(int)id},
+                new Object[]{id},
                 new UserMapper());
     }
 

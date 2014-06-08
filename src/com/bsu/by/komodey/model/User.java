@@ -1,6 +1,6 @@
 package com.bsu.by.komodey.model;
 public class User {
-    private long id;
+    private int id;
     private String email;
     private String password;
     private String name;
@@ -21,16 +21,16 @@ public class User {
         this.phone = phone;
     }
 
-    public User(long id, String email, String password, String name, String surname, String role, String phone) {
+    public User(int id, String email, String password, String name, String surname, String role, String phone) {
         this(email, password, name, surname, role, phone);
         this.id = id;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
