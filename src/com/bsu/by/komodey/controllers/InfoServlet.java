@@ -24,7 +24,7 @@ public class InfoServlet extends HttpServlet {
             User user = userServiceImpl.getUserById(id);
             user.setPhone(req.getParameter("value"));
             userServiceImpl.update(user);
-            resp.getWriter().print(req.getParameter("value"));
+            resp.getWriter().print(req.getParameter("newPhone"));
         }
         resp.getWriter().close();
     }

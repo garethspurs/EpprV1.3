@@ -32,7 +32,7 @@ function editUserInfo(info){
 
 function submitInfo (id) {
     var inputInfo = $("#ownInfoEditBox").val();
-    var path = '/info?id=' + id + '&action=edit&value=' + inputInfo;
+    var path = '/info?id=' + id + '&action=edit&newPhone=' + inputInfo;
 //    alert(path)
     $.get(path, function(responseText){
         $('#userInfo').text(responseText);
